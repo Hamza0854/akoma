@@ -319,7 +319,7 @@ em{font-style:italic}
 .shape-ring{position:absolute;right:-180px;top:80px;width:420px;height:420px;border-radius:50%;border:60px solid var(--brand-50);pointer-events:none;z-index: -1;}
 .about-media{position:relative;padding:0 70px 70px 0;max-width:560px}
 .about-media figure{margin:0;overflow:hidden;border-radius:var(--r-lg)}
-.about-img-1{aspect-ratio:4/5;box-shadow:var(--shadow);border-radius:200px 200px var(--r-lg) var(--r-lg)!important}
+.about-img-1{aspect-ratio:4/5;box-shadow:var(--shadow);border-radius: 34px !important}
 .about-img-1 img,.about-img-2 img{width:100%;height:100%;object-fit:cover}
 .about-img-2{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:4/5;border:8px solid var(--paper);box-shadow:var(--shadow)}
 .about-badge{position:absolute;left:-20px;bottom:40px;background:var(--grad);color:#fff;border-radius:var(--r);padding:20px 24px;box-shadow:var(--shadow-red);display:flex;align-items:center;gap:12px}
@@ -419,7 +419,7 @@ em{font-style:italic}
 .commit-list li:hover .cl-icon{color:var(--brand);transform:scale(1.15) rotate(-8deg)}
 
 /* ---------- 14. GALLERY ---------- */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:285px;gap:16px}
 .gallery-item{position:relative;overflow:hidden;border-radius:var(--r);display:block}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s}
 .gallery-item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(225,29,46,.55),transparent 60%);opacity:0;transition:opacity .5s}
@@ -444,7 +444,7 @@ em{font-style:italic}
 .video-modal .ratio{width:100%;border-radius:var(--r);overflow:hidden;background:#000}
 
 /* ---------- 15. FAQ ---------- */
-.video-card{position:relative;border-radius:200px 200px var(--r-lg) var(--r-lg);overflow:hidden;aspect-ratio:5/6;box-shadow:var(--shadow)}
+.video-card{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:5/6;box-shadow:var(--shadow)}
 .video-card img{width:100%;height:100%;object-fit:cover}
 .video-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,28,63,.7),rgba(15,28,63,.1))}
 .play-btn{position:absolute;z-index:2;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border:0;border-radius:50%;background:var(--grad);color:#fff;font-size:2.2rem;display:grid;place-items:center;box-shadow:var(--shadow-red);transition:transform .4s var(--ease)}
@@ -559,13 +559,13 @@ em{font-style:italic}
 .footer-bottom i{color:var(--brand);animation:lubdub var(--beat) infinite;display:inline-block}
 
 /* ---------- 22. FLOATING ---------- */
-.to-top{position:fixed;right:22px;bottom:22px;z-index:900;width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:var(--brand);box-shadow:var(--shadow);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .45s var(--ease)}
+.to-top{position:fixed;right:22px;bottom:92px;z-index:900;width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:var(--brand);box-shadow:var(--shadow);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .45s var(--ease)}
 .to-top.show{opacity:1;visibility:visible;transform:none}
 .to-top svg{position:absolute;inset:4px;transform:rotate(-90deg)}
 .to-top circle{fill:none;stroke-width:2.5}
 .ring-bg{stroke:var(--brand-100)}
 .ring-fg{stroke:var(--brand);stroke-dasharray:100;stroke-dashoffset:100;stroke-linecap:round}
-.fab-call{position:fixed;left:18px;bottom:22px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:1.3rem;box-shadow:var(--shadow-red)}
+.fab-call{position:fixed;right:18px;bottom:22px;z-index:900;width:56px;height:56px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:1.3rem;box-shadow:var(--shadow-red)}
 .fab-call::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--brand);animation:ripple 2s var(--ease) infinite}
 .fab-call:hover{color:#fff}
 .akoma-toast{background:#fff;border:0;border-radius:var(--r);box-shadow:var(--shadow);padding:14px 16px;min-width:320px}
@@ -625,7 +625,7 @@ em{font-style:italic}
   .cl-icon{display:none}
   .appt-card{padding:26px 20px}
   .lb-nav{width:40px;height:40px}
-  .to-top{right:16px;bottom:16px}
+  .to-top{right:16px;bottom:92px}
 }
 @media (max-width:575.98px){
   .brand-text strong{font-size:1.45rem}
@@ -647,6 +647,12 @@ em{font-style:italic}
   .hero-stats li + li{padding-left:14px}
   .bento{grid-auto-rows:150px;gap:10px}
   .footer-bottom{justify-content:center;text-align:center}
+  .stat-label {
+    font-size: 11px;
+  }
+  .mobile-links li a {
+    font-size: 1.1rem !important;
+  }
 }
 
 /* ---------- 26. REDUCED MOTION ---------- */
@@ -674,3 +680,65 @@ h1,h2,h3,h4{font-weight:400;letter-spacing:-.015em}
 .cta-inner h2{font-size:clamp(2.2rem,4.2vw,3.5rem);line-height:1.05}
 .offcanvas-title{font-weight:400}
 .mobile-links li a{font-size:1.85rem}
+
+
+
+/* ---------- 28. MOBILE HORIZONTAL-SCROLL FIX ---------- */
+
+/* 1. Clip any sideways overflow at the root.
+      "clip" is used instead of "hidden" so the sticky Commitment heading keeps working. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;   /* fallback for older browsers */
+}
+@supports (overflow-x: clip) {
+  html,
+  body { overflow-x: clip; }
+}
+
+/* 2. Contain decorative shapes inside every section */
+main > section,
+.site-footer {
+  overflow-x: clip;
+}
+
+/* 3. Bootstrap's large gutters (g-5) add -1.5rem side margins to rows,
+      which is wider than the container padding on phones */
+@media (max-width: 767.98px) {
+  .row.g-5,
+  .row.gx-5 {
+    --bs-gutter-x: 1.5rem;
+  }
+}
+
+/* 4. Clinics: the rotating rings are wider than their box */
+.clinic-center {
+  max-width: min(380px, 78vw);
+}
+@media (max-width: 575.98px) {
+  .cc-ring.two { width: 112%; bottom: -6%; }
+  .cc-ring     { width: 104%; }
+}
+
+/* 5. Other small offenders on narrow screens */
+@media (max-width: 575.98px) {
+  .akoma-toast        { min-width: 0; width: calc(100vw - 32px); }
+  .toast-container    { width: 100%; }
+  .about-media        { padding: 0 24px 40px 0; }
+  .about-badge        { left: 0; padding: 14px 16px; }
+  .about-badge strong { font-size: 2rem; }
+  .dots-shape         { right: 0; }
+  .cc-tag             { font-size: .78rem; padding: 8px 14px; }
+  .fac-tabs button    { padding: 10px 14px; font-size: .82rem; }
+  .hero-stats         { gap: 16px 0; }
+  .footer-word        { font-size: 22vw; }
+}
+
+/* 6. Long words / URLs never push the layout wider */
+h1, h2, h3, p, a, blockquote {
+  overflow-wrap: break-word;
+}
+img, svg, video, iframe {
+  max-width: 100%;
+}
