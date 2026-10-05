@@ -125,18 +125,37 @@
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="siteHeader">
     <div class="topbar">
-      <div class="container d-flex align-items-center justify-content-between gap-3">
-        <ul class="topbar-info list-unstyled d-flex align-items-center gap-4 mb-0">
-          <li><span class="live-dot" aria-hidden="true"></span> Open 24 hours, 7 days a week</li>
-          <li class="d-none d-md-flex"><i class="bi bi-telephone" aria-hidden="true"></i> <a href="tel:+233249728410">+233 24 972 8410</a></li>
-          <!-- <li class="d-none d-lg-flex"><i class="bi bi-calendar2-check" aria-hidden="true"></i> Request an appointment within 24 hours</li> -->
-        </ul>
-        <ul class="topbar-social list-unstyled d-flex gap-2 mb-0">
-          <li><a href="https://web.facebook.com/profile.php?id=100084322650427" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
-          <li><a href="https://www.instagram.com/akomaspecialisthospital/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
-          <li><a href="https://www.google.com.gh/maps/place/Akoma+Specialist+Hospital/@6.6585987,-1.7042651,17.25z/data=!4m5!3m4!1s0xfdb994c5fd1dccb:0xf3449c1a661b6038!8m2!3d6.6601364!4d-1.7028717" target="_blank" rel="noopener" aria-label="Find us on Google Maps"><i class="bi bi-geo-alt"></i></a></li>
-        </ul>
+      <div class="container">
+        <div class="tb-inner">
+          <div class="tb-left">
+            <span class="tb-badge">
+              <svg viewBox="0 0 40 16" aria-hidden="true"><path pathLength="100" d="M0 8h10l3-5 4 10 3-7 2 2h18"/></svg>
+              24/7
+            </span>
+            <div class="tb-ticker">
+              <ul>
+                <li>Emergency &amp; specialist care, round the clock</li>
+                <li>Request an appointment within 24 hours</li>
+                <li>In-house laboratory &amp; pharmacy</li>
+                <li aria-hidden="true">Emergency &amp; specialist care, round the clock</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tb-right">
+            <a href="tel:+233249728410" class="tb-call" aria-label="Call emergency line +233 24 972 8410">
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              <span><small>Emergency line</small>+233 24 972 8410</span>
+            </a>
+            <span class="tb-sep" aria-hidden="true"></span>
+            <ul class="tb-social">
+              <li><a href="https://web.facebook.com/profile.php?id=100084322650427" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/akomaspecialisthospital/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+              <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+              <li><a href="https://www.google.com.gh/maps/place/Akoma+Specialist+Hospital/@6.6585987,-1.7042651,17.25z/data=!4m5!3m4!1s0xfdb994c5fd1dccb:0xf3449c1a661b6038!8m2!3d6.6601364!4d-1.7028717" target="_blank" rel="noopener" aria-label="Find us on Google Maps"><i class="bi bi-geo-alt-fill"></i></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -281,10 +300,7 @@
 
               <!-- Rotating badge (sits on the seam) -->
               <div class="spin-badge" aria-hidden="true" data-depth="14">
-                <svg viewBox="0 0 120 120">
-                  <defs><path id="circ" d="M60 60 m-47 0 a47 47 0 1 1 94 0 a47 47 0 1 1 -94 0"/></defs>
-                  <text textLength="290" lengthAdjust="spacing"><textPath href="#circ">HEALING HANDS • CARING HEART • AKOMA •</textPath></text>
-                </svg>
+               
                 <i class="bi bi-heart-fill"></i>
               </div>
 

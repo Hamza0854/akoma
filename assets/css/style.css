@@ -130,7 +130,7 @@ em{font-style:italic}
 
 /* ---------- 5. HEADER ---------- */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .5s var(--ease)}
-.topbar{
+/*.topbar{
   background:var(--ink);color:rgba(255,255,255,.75);font-size:.82rem;
   max-height:46px;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s;
 }
@@ -140,7 +140,7 @@ em{font-style:italic}
 .topbar i{color:#ff8a95}
 .topbar-social a{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:rgba(255,255,255,.7)}
 .topbar-social a:hover{background:var(--brand);color:#fff}
-.topbar-social i{color:inherit}
+.topbar-social i{color:inherit}*/
 
 .live-dot{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:#2BD67B;flex:none}
 .live-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.6s ease-out infinite}
@@ -231,7 +231,7 @@ em{font-style:italic}
 .hb-progress button.done i{transform:scaleX(1)}
 .hb-progress button.active i{animation:slidefill var(--slide,5.5s) linear forwards}
 
-.spin-badge{position:absolute;z-index:3;top:34px;left:calc(57% - 64px);width:128px;height:128px;border-radius:50%;background:#fff;box-shadow:var(--shadow);display:grid;place-items:center;transition:transform .8s var(--ease)}
+.spin-badge{position:absolute;z-index:3;top:34px;left:calc(57% - 64px);width:128px;height:128px;border-radius:50%;box-shadow:var(--shadow);display:grid;place-items:center;transition:transform .8s var(--ease)}
 .spin-badge::before{content:"";position:absolute;inset:32px;border-radius:50%;background:var(--brand-50)}
 .spin-badge svg{position:absolute;inset:4px;width:calc(100% - 8px);overflow:visible;animation:spin 20s linear infinite}
 .spin-badge text{font-size:10px;font-weight:700;fill:var(--ink);font-family:var(--ff-body)}
@@ -681,7 +681,85 @@ h1,h2,h3,h4{font-weight:400;letter-spacing:-.015em}
 .offcanvas-title{font-weight:400}
 .mobile-links li a{font-size:1.85rem}
 
+/* ---------- 29. TOP BAR (light, heartbeat style) ---------- */
+.topbar{
+  position:relative;
+  background:linear-gradient(90deg,#fff 0%,var(--cream) 100%);
+  border-bottom:1px solid var(--line);
+  font-size:.82rem;color:var(--body);
+  max-height:46px;overflow:hidden;
+  transition:max-height .5s var(--ease),opacity .4s;
+}
+.topbar::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--grad)}
+.tb-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:44px}
 
+/* Left: badge + ticker */
+.tb-left{display:flex;align-items:center;gap:14px;min-width:0}
+.tb-badge{
+  display:inline-flex;align-items:center;gap:6px;flex:none;
+  padding:4px 11px 4px 8px;border-radius:100px;
+  background:var(--grad);color:#fff;
+  font-weight:700;font-size:.74rem;letter-spacing:.05em;
+  box-shadow:0 6px 14px -6px rgba(225,29,46,.6);
+}
+.tb-badge svg{width:26px;height:12px;overflow:visible}
+.tb-badge path{
+  fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:100;stroke-dashoffset:100;animation:tbdraw 2s linear infinite;
+}
+.tb-ticker{height:20px;overflow:hidden;min-width:0}
+.tb-ticker ul{margin:0;padding:0;list-style:none;animation:tbticker 12s var(--ease) infinite}
+.tb-ticker li{height:20px;line-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500;color:var(--ink)}
+.topbar:hover .tb-ticker ul{animation-play-state:paused}
+
+/* Right: call + social */
+.tb-right{display:flex;align-items:center;gap:18px;flex:none}
+.tb-call{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink)}
+.tb-call i{
+  display:grid;place-items:center;width:24px;height:24px;border-radius:50%;
+  background:var(--brand-50);color:var(--brand);font-size:.68rem;
+  animation:tbring 3s ease-in-out infinite;
+}
+.tb-call small{font-weight:500;font-size:.78rem;color:var(--muted);margin-right:6px}
+.tb-call:hover{color:var(--brand)}
+.tb-sep{width:1px;height:18px;background:rgba(20,24,43,.15)}
+.tb-social{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.tb-social a{
+  display:grid;place-items:center;width:28px;height:28px;border-radius:8px;
+  color:var(--body);font-size:.85rem;
+  transition:background .3s var(--ease),color .3s,transform .3s var(--ease);
+}
+.tb-social a:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+
+/* Animations */
+@keyframes tbdraw{0%{stroke-dashoffset:100}55%{stroke-dashoffset:0}100%{stroke-dashoffset:-100}}
+@keyframes tbticker{
+  0%,28%{transform:translateY(0)}
+  33%,61%{transform:translateY(-20px)}
+  66%,94%{transform:translateY(-40px)}
+  100%{transform:translateY(-60px)}
+}
+@keyframes tbring{
+  0%,70%,100%{transform:rotate(0)}
+  74%{transform:rotate(-14deg)}
+  78%{transform:rotate(14deg)}
+  82%{transform:rotate(-10deg)}
+  86%{transform:rotate(8deg)}
+  90%{transform:rotate(0)}
+}
+
+/* Responsive */
+@media (max-width:991.98px){
+  .tb-call small{display:none}
+}
+@media (max-width:767.98px){
+  .tb-sep,.tb-social{display:none}
+}
+@media (max-width:575.98px){
+  .tb-call span{display:none}
+  .tb-call i{width:28px;height:28px;font-size:.75rem}
+  .tb-left{gap:10px}
+}
 
 /* ---------- 28. MOBILE HORIZONTAL-SCROLL FIX ---------- */
 
